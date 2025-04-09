@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login } from "./AuthReducer"; 
+import { login } from "../AuthReducer"; 
 
 
 function Login() {
@@ -21,7 +21,7 @@ function Login() {
         const user = data[0];
         dispatch(login(user));
         localStorage.setItem("user", JSON.stringify(user));
-        navigate("/dashboard");
+        navigate("/");
       } else {
         alert("Неверный email или пароль");
       }

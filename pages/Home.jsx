@@ -1,8 +1,19 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 
 export default function Home() {
   const user = useSelector((state) => state.auth.user);
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    if (user) {
+      fetch("http://localhost:3001/events")
+        .then((res) => res.json())
+        .then((data) => setEvents(data))
+        .catch((err) => console.error("Ошибка загрузки событий:", err));
+    }
+  }, [user]);
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
@@ -14,6 +25,16 @@ export default function Home() {
           <Link to="/dashboard">
             <button>Перейти в Личный кабинет</button>
           </Link>
+
+          <h2 style={{ marginTop: "30px" }}>Все мероприятия:</h2>
+          {events.map((event) => (
+            <div key={event.id} style={{ border: "1px solid #ccc", margin: 10, padding: 10 }}>
+              <h3>{event.title}</h3>
+              <p>{event.description}</p>
+              <p>Дата: {event.date}</p>
+              <p>Мест: {event.capacity}</p>
+            </div>
+          ))}
         </>
       ) : (
         <>
