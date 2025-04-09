@@ -4,61 +4,71 @@
       "id": 1,
       "email": "admin@example.com",
       "password": "admin123",
-      "role": "admin"
+      "role": "admin",
+      "name": "Admin Adminov"
     },
     {
       "id": 2,
-      "email": "organizer1@example.com",
+      "email": "aliya@example.com",
       "password": "org123",
-      "role": "organizer"
+      "role": "organizer",
+      "name": "Aliya Aitkhozha"
     },
     {
       "id": 3,
-      "email": "organizer2@example.com",
+      "email": "nursultan@example.com",
       "password": "org456",
-      "role": "organizer"
+      "role": "organizer",
+      "name": "Nursultan Zhaksylykov"
     },
     {
       "id": 4,
-      "email": "client1@example.com",
+      "email": "aruzhan@example.com",
       "password": "client123",
-      "role": "client"
+      "role": "client",
+      "name": "Aruzhan Omarova"
     },
     {
       "id": 5,
-      "email": "client2@example.com",
+      "email": "dias@example.com",
       "password": "client456",
-      "role": "client"
+      "role": "client",
+      "name": "Dias Nurlan"
     },
     {
       "id": 6,
-      "email": "client3@example.com",
+      "email": "madina@example.com",
       "password": "client789",
-      "role": "client"
+      "role": "client",
+      "name": "Madina Serik"
     },
     {
       "id": 7,
-      "email": "user7@example.com",
+      "email": "zhanbolat@example.com",
       "password": "pass7",
-      "role": "client"
+      "role": "client",
+      "name": "Zhanbolat Tolegen"
     },
     {
       "id": 8,
-      "email": "user8@example.com",
+      "email": "akerke@example.com",
       "password": "pass8",
-      "role": "organizer"
+      "role": "organizer",
+      "name": "Akerke Aman"
     },
     {
       "id": 9,
-      "email": "user9@example.com",
+      "email": "askar@example.com",
       "password": "pass9",
-      "role": "client"
+      "role": "client",
+      "name": "Askar Tanirbergen"
     },
     {
       "id": 10,
-      "email": "user10@example.com",
+      "email": "botagoz@example.com",
       "password": "pass10",
-      "role": "client"
+      "role": "client",
+      "name": "Botagoz Marat"
     }
   ],
   "events": [

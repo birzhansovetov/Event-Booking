@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import ShowEvents from './ShowEvents';
+import { Provider } from 'react-redux';
+import store from './store'; // путь к твоему store.js
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <ShowEvents/>
-    
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );

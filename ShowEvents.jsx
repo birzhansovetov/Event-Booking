@@ -1,7 +1,10 @@
 import { useState,useEffect } from "react";
+
+
 export default function ShowEvents(){
 
     const[events,setEvents] = useState([])
+
     useEffect(()=> {
         const fetchEvents = async ()=>{
             try{
@@ -19,6 +22,7 @@ export default function ShowEvents(){
         }
         fetchEvents();
     },[])
+    
     return(
         <div>
             <h2>Все мероприятия</h2>
