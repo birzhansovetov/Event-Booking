@@ -1,0 +1,285 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "role": "admin",
+      "name": "Admin Adminov"
+    },
+    {
+      "id": "2",
+      "email": "aliya@example.com",
+      "password": "org123",
+      "role": "organizer",
+      "name": "Aliya Aitkhozha"
+    },
+    {
+      "id": "3",
+      "email": "nursultan@example.com",
+      "password": "org456",
+      "role": "organizer",
+      "name": "Nursultan Zhaksylykov"
+    },
+    {
+      "id": "4",
+      "email": "aruzhan@example.com",
+      "password": "client123",
+      "role": "client",
+      "name": "Aruzhan Omarova"
+    },
+    {
+      "id": "5",
+      "email": "dias@example.com",
+      "password": "client456",
+      "role": "client",
+      "name": "Dias Nurlan"
+    },
+    {
+      "id": "6",
+      "email": "madina@example.com",
+      "password": "client789",
+      "role": "client",
+      "name": "Madina Serik"
+    },
+    {
+      "id": "7",
+      "email": "zhanbolat@example.com",
+      "password": "pass7",
+      "role": "client",
+      "name": "Zhanbolat Tolegen"
+    },
+    {
+      "id": "8",
+      "email": "akerke@example.com",
+      "password": "pass8",
+      "role": "organizer",
+      "name": "Akerke Aman"
+    },
+    {
+      "id": "9",
+      "email": "askar@example.com",
+      "password": "pass9",
+      "role": "client",
+      "name": "Askar Tanirbergen"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "Event 1",
+      "description": "Уникальный вечер живой музыки под открытым небом с участием лучших джазовых исполнителей.",
+      "date": "2025-06-05",
+      "organizerId": 8,
+      "capacity": 50
+    },
+    {
+      "id": "2",
+      "title": "Event 2",
+      "description": "Конференция по инновациям и технологиям с участием стартапов и инвесторов.",
+      "date": "2025-05-23",
+      "organizerId": 8,
+      "capacity": 50
+    },
+    {
+      "id": "3",
+      "title": "Event 3",
+      "description": "Фестиваль уличной еды с более чем 30 фудтраками, мастер-классами и живыми выступлениями.",
+      "date": "2025-04-18",
+      "organizerId": 8,
+      "capacity": 50
+    },
+    {
+      "id": "4",
+      "title": "Event 4",
+      "description": "Спортивный марафон на 10 км для любителей бега. В подарок — футболка и медаль.",
+      "date": "2025-05-17",
+      "organizerId": 2,
+      "capacity": 50
+    },
+    {
+      "id": "5",
+      "title": "Event 5",
+      "description": "Мастер-класс по созданию керамики с профессиональным художником. Все материалы включены.",
+      "date": "2025-05-27",
+      "organizerId": 3,
+      "capacity": 50
+    },
+    {
+      "id": "6",
+      "title": "Event 6",
+      "description": "Открытый кинопоказ под звёздами. В программе — ретро-фильмы и попкорн.",
+      "date": "2025-06-10",
+      "organizerId": 3,
+      "capacity": 50
+    },
+    {
+      "id": "7",
+      "title": "Event 7",
+      "description": "Международный турнир по киберспорту. Призовой фонд — $10,000.",
+      "date": "2025-05-22",
+      "organizerId": 8,
+      "capacity": 50
+    },
+    {
+      "id": "8",
+      "title": "Event 8",
+      "description": "Бизнес-завтрак с успешными предпринимателями. Обсуждаем стартап-культуру.",
+      "date": "2025-05-18",
+      "organizerId": 3,
+      "capacity": 50
+    },
+    {
+      "id": "9",
+      "title": "Event 9",
+      "description": "Театральный спектакль в стиле современной драмы. Постановка молодёжного театра.",
+      "date": "2025-05-28",
+      "organizerId": 8,
+      "capacity": 50
+    },
+    {
+      "id": "10",
+      "title": "Event 10",
+      "description": "Лекция и нетворкинг по темам устойчивого развития и зелёных технологий.",
+      "date": "2025-05-10",
+      "organizerId": 2,
+      "capacity": 50
+    },
+    {
+      "id": "2a82",
+      "title": "hsha",
+      "description": "asja",
+      "date": "2025-04-18",
+      "capacity": 15,
+      "organizerId": "3"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "eventId": 7,
+      "userId": 4,
+      "quantity": 3
+    },
+    {
+      "id": "2",
+      "eventId": 3,
+      "userId": 6,
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "eventId": 7,
+      "userId": 9,
+      "quantity": 3
+    },
+    {
+      "id": "4",
+      "eventId": 4,
+      "userId": 6,
+      "quantity": 3
+    },
+    {
+      "id": "5",
+      "eventId": 6,
+      "userId": 7,
+      "quantity": 2
+    },
+    {
+      "id": "6",
+      "eventId": 7,
+      "userId": 10,
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "eventId": 10,
+      "userId": 6,
+      "quantity": 1
+    },
+    {
+      "id": "8",
+      "eventId": 2,
+      "userId": 4,
+      "quantity": 1
+    },
+    {
+      "id": "9",
+      "eventId": 5,
+      "userId": 6,
+      "quantity": 1
+    },
+    {
+      "id": "10",
+      "eventId": 8,
+      "userId": 7,
+      "quantity": 4
+    },
+    {
+      "id": "11",
+      "eventId": 5,
+      "userId": 4,
+      "quantity": 3
+    },
+    {
+      "id": "12",
+      "eventId": 4,
+      "userId": 7,
+      "quantity": 2
+    },
+    {
+      "id": "13",
+      "eventId": 2,
+      "userId": 6,
+      "quantity": 1
+    },
+    {
+      "id": "14",
+      "eventId": 6,
+      "userId": 6,
+      "quantity": 2
+    },
+    {
+      "id": "15",
+      "eventId": 1,
+      "userId": 7,
+      "quantity": 3
+    },
+    {
+      "id": "16",
+      "eventId": 3,
+      "userId": 5,
+      "quantity": 2
+    },
+    {
+      "id": "17",
+      "eventId": 6,
+      "userId": 5,
+      "quantity": 4
+    },
+    {
+      "id": "18",
+      "eventId": 3,
+      "userId": 5,
+      "quantity": 4
+    },
+    {
+      "id": "19",
+      "eventId": 1,
+      "userId": 4,
+      "quantity": 2
+    },
+    {
+      "id": "20",
+      "eventId": 9,
+      "userId": 10,
+      "quantity": 2
+    },
+    {
+      "id": "c946",
+      "userId": "5",
+      "eventId": "1",
+      "quantity": 1
+    }
+  ]
+}

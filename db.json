@@ -62,6 +62,13 @@
       "password": "pass9",
       "role": "client",
       "name": "Askar Tanirbergen"
+    },
+    {
+      "name": "Tatyana",
+      "email": "tyatyanatiss@example.com",
+      "password": "tanya123",
+      "role": "client",
+      "id": "1744262984954"
     }
   ],
   "events": [
@@ -144,14 +151,6 @@
       "date": "2025-05-10",
       "organizerId": 2,
       "capacity": 50
-    },
-    {
-      "id": "2a82",
-      "title": "hsha",
-      "description": "asja",
-      "date": "2025-04-18",
-      "capacity": 15,
-      "organizerId": "3"
     }
   ],
   "bookings": [
@@ -246,12 +245,6 @@
       "quantity": 3
     },
     {
-      "id": "16",
-      "eventId": 3,
-      "userId": 5,
-      "quantity": 2
-    },
-    {
       "id": "17",
       "eventId": 6,
       "userId": 5,
@@ -280,6 +273,18 @@
       "userId": "5",
       "eventId": "1",
       "quantity": 1
+    },
+    {
+      "id": "6aed",
+      "userId": "5",
+      "eventId": "1",
+      "quantity": 1
+    },
+    {
+      "userId": "1744262984954",
+      "eventId": "1",
+      "quantity": 1,
+      "id": "y_-LqFt"
     }
   ]
 }
