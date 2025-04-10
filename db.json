@@ -151,6 +151,14 @@
       "date": "2025-05-10",
       "organizerId": 2,
       "capacity": 50
+    },
+    {
+      "title": "Театральное представление для детей 8+",
+      "description": "Описаниехазавыза",
+      "date": "2025-04-13",
+      "capacity": 22,
+      "organizerId": "8",
+      "id": "V5OVjbs"
     }
   ],
   "bookings": [
@@ -183,12 +191,6 @@
       "eventId": 6,
       "userId": 7,
       "quantity": 2
-    },
-    {
-      "id": "6",
-      "eventId": 7,
-      "userId": 10,
-      "quantity": 1
     },
     {
       "id": "7",
@@ -260,12 +262,6 @@
       "id": "19",
       "eventId": 1,
       "userId": 4,
-      "quantity": 2
-    },
-    {
-      "id": "20",
-      "eventId": 9,
-      "userId": 10,
       "quantity": 2
     },
     {

@@ -12,7 +12,7 @@ export default function Dashboard() {
     date: "",
     capacity: 0
   });
-  
+  const [editingEvent, setEditingEvent] = useState(null);
 
   useEffect(() => {
     if (user?.role === "admin") {
@@ -49,8 +49,6 @@ export default function Dashboard() {
       const newBooking = await response.json();
       setBookings([...bookings, newBooking]);
       alert("Успешно забронировано!");
-    } else {
-      alert("Ошибка при бронировании.");
     }
   };
 
@@ -60,8 +58,6 @@ export default function Dashboard() {
     });
     setBookings(bookings.filter((b) => b.id !== id));
   };
-
-  const getEventById = (id) => events.find((e) => e.id === id);
 
   const handleDeleteUser = async (id) => {
     await fetch(`http://localhost:3001/users/${id}`, {
@@ -76,30 +72,49 @@ export default function Dashboard() {
     });
     setEvents(events.filter((e) => e.id !== id));
   };
-  const handleCreateEvent = async (e) => {
+
+  const handleEditEvent = (event) => {
+    setEditingEvent(event);
+    setNewEvent({
+      title: event.title,
+      description: event.description,
+      date: event.date,
+      capacity: event.capacity
+    });
+  };
+
+  const handleSubmitEvent = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3001/events", {
-      method: "POST",
+    const url = editingEvent 
+      ? `http://localhost:3001/events/${editingEvent.id}`
+      : "http://localhost:3001/events";
+      
+    const method = editingEvent ? "PUT" : "POST";
+    
+    const response = await fetch(url, {
+      method,
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         ...newEvent,
         organizerId: user.id
-      })
+      }),
     });
-  
+
     if (response.ok) {
-      const created = await response.json();
-      setEvents([...events, created]);
+      const data = await response.json();
+      if (editingEvent) {
+        setEvents(events.map(e => e.id === editingEvent.id ? data : e));
+      } else {
+        setEvents([...events, data]);
+      }
       setNewEvent({ title: "", description: "", date: "", capacity: 0 });
-      alert("Мероприятие успешно создано!");
-    } else {
-      alert("Ошибка при создании.");
+      setEditingEvent(null);
     }
   };
-  
 
+  const getEventById = (id) => events.find((e) => e.id === id);
   const myEvents = events.filter((e) => e.organizerId === user?.id);
 
   if (!user) return <p>Нет доступа</p>;
@@ -149,52 +164,53 @@ export default function Dashboard() {
               <h3>{event.title}</h3>
               <p>{event.description}</p>
               <p>Дата: {event.date}</p>
+              <p>Мест: {event.capacity}</p>
+              <button onClick={() => handleEditEvent(event)}>Редактировать</button>
               <button onClick={() => handleDeleteEvent(event.id)}>Удалить</button>
             </div>
           ))}
-          <h2>Создать мероприятие</h2>
-<form onSubmit={handleCreateEvent}>
-  <input
-    type="text"
-    placeholder="Название"
-    value={newEvent.title}
-    onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-    required
-  />
-  <br />
-  <textarea
-    placeholder="Описание"
-    value={newEvent.description}
-    onChange={(e) => setNewEvent({ ...newEvent, description: e.target.value })}
-    required
-  />
-  <br />
-  <input
-    type="date"
-    value={newEvent.date}
-    onChange={(e) => setNewEvent({ ...newEvent, date: e.target.value })}
-    required
-  />
-  <br />
-  <input
-    type="number"
-    placeholder="Количество мест"
-    value={newEvent.capacity}
-    onChange={(e) => setNewEvent({ ...newEvent, capacity: parseInt(e.target.value) })}
-    required
-  />
-  <br />
-  <button type="submit">Создать</button>
-</form>
 
-
-          <h2>Все мероприятия</h2>
-          {events.map((event) => (
-            <div key={event.id} style={{ border: "1px dashed gray", margin: 10, padding: 10 }}>
-              <h4>{event.title}</h4>
-              <p>{event.description}</p>
-            </div>
-          ))}
+          <h2>{editingEvent ? "Редактировать мероприятие" : "Создать мероприятие"}</h2>
+          <form onSubmit={handleSubmitEvent}>
+            <input
+              type="text"
+              placeholder="Название"
+              value={newEvent.title}
+              onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
+              required
+            />
+            <br />
+            <textarea
+              placeholder="Описание"
+              value={newEvent.description}
+              onChange={(e) => setNewEvent({ ...newEvent, description: e.target.value })}
+              required
+            />
+            <br />
+            <input
+              type="date"
+              value={newEvent.date}
+              onChange={(e) => setNewEvent({ ...newEvent, date: e.target.value })}
+              required
+            />
+            <br />
+            <input
+              type="number"
+              placeholder="Количество мест"
+              value={newEvent.capacity}
+              onChange={(e) => setNewEvent({ ...newEvent, capacity: parseInt(e.target.value) })}
+              required
+            />
+            <br />
+            <button type="submit">
+              {editingEvent ? "Обновить" : "Создать"}
+            </button>
+            {editingEvent && (
+              <button type="button" onClick={() => setEditingEvent(null)}>
+                Отменить
+              </button>
+            )}
+          </form>
         </>
       )}
 
